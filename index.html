@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODLF | Oratory & Debate League of Florida</title>
+<style>
+:root{--navy:#09264a;--navy2:#123b68;--gold:#c7a04b;--cream:#f7f5ef;--ink:#182538;--muted:#697586;--line:#e2e6eb;--white:#fff;--green:#24734d}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#f4f6f8}
+header{background:var(--navy);color:white;border-bottom:4px solid var(--gold)}
+.top{max-width:1180px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}.seal{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;font-family:Georgia,serif;font-size:14px;flex-shrink:0}.brand-name{font-family:Georgia,serif;font-weight:700;letter-spacing:.04em;font-size:16px}.brand-sub{font-size:11px;letter-spacing:.14em;color:#e8d8ad;margin-top:3px}
+nav{display:flex;gap:7px;flex-wrap:wrap}nav button{background:transparent;color:#e9eef5;border:0;border-radius:7px;padding:10px 11px;cursor:pointer;font-size:13px}nav button.active,nav button:hover{background:#1c456f;color:white}
+.wrap{max-width:1180px;margin:auto;padding:28px 22px 56px}.hero{background:linear-gradient(115deg,#09264a,#174775);border-radius:18px;color:white;padding:30px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center;box-shadow:0 8px 24px #10243b15}.eyebrow{color:#e4c77e;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.18em}.hero h1{font-family:Georgia,serif;font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 12px}.hero p{color:#dce6f1;line-height:1.6;margin:0 0 20px;max-width:600px}.btn{border:0;border-radius:8px;padding:11px 15px;font-weight:700;cursor:pointer;background:var(--gold);color:#182538}.btn.secondary{background:white;color:var(--navy)}.btn.outline{background:transparent;border:1px solid #b8c7d8;color:white}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.hero-note{border:1px solid #456588;border-radius:14px;padding:20px;background:#ffffff08}.hero-note h3{margin:0 0 14px;font-family:Georgia,serif;font-size:19px}.hero-note p{font-size:13px;margin:8px 0;color:#e1e9f1}.hero-note strong{color:#f0d48a}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.stat,.panel,.event-card{background:white;border:1px solid var(--line);border-radius:13px}.stat{padding:18px}.stat-label{font-size:12px;color:var(--muted)}.stat-value{font-size:26px;font-weight:800;color:var(--navy);margin:6px 0 3px}.stat-foot{font-size:11px;color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 14px}.section-head h2{font-family:Georgia,serif;font-size:25px;margin:0;color:var(--navy)}.section-head p{color:var(--muted);font-size:13px;margin:5px 0 0}.link{background:none;border:0;color:#174f83;font-weight:700;cursor:pointer}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.event-card{padding:18px;display:flex;flex-direction:column;gap:11px}.event-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.pill{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;padding:5px 8px;border-radius:30px;background:#eaf5ee;color:var(--green)}.pill.blue{background:#eaf1fa;color:#225b8d}.event-card h3{font-family:Georgia,serif;color:var(--navy);font-size:19px;margin:0}.event-meta{font-size:13px;color:var(--muted);line-height:1.7}.event-card .btn{align-self:start;margin-top:auto}.lower{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:20px}.panel{padding:20px}.panel h3{font-family:Georgia,serif;color:var(--navy);margin:0 0 14px;font-size:20px}.row-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.row-item:last-child{border-bottom:0}.datebox{width:46px;min-width:46px;text-align:center;border-radius:8px;background:var(--cream);padding:7px 4px;color:var(--navy)}.datebox b{display:block;font-size:17px}.datebox span{font-size:10px;text-transform:uppercase;letter-spacing:.08em}.row-item strong{display:block;font-size:13px}.row-item small{display:block;color:var(--muted);margin-top:4px;font-size:12px}
+.page{display:none}.page.active{display:block}.page-title{font-family:Georgia,serif;color:var(--navy);font-size:34px;margin:0 0 8px}.intro{color:var(--muted);margin:0 0 22px;line-height:1.5}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.field,select,textarea{border:1px solid #d5dce4;border-radius:8px;padding:11px 12px;font:inherit;background:white;min-width:0}.field{width:100%}.toolbar .field{max-width:340px}.table-wrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:650px}th,td{text-align:left;padding:14px 15px;border-bottom:1px solid var(--line);font-size:13px}th{background:#f8f9fb;color:#526073;text-transform:uppercase;font-size:10px;letter-spacing:.09em}tr:last-child td{border-bottom:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-group{display:flex;flex-direction:column;gap:7px}.form-group label{font-size:12px;font-weight:750;color:#425166}.form-group.full{grid-column:1/-1}.notice{background:#fff8e8;border:1px solid #efdfb6;border-radius:10px;padding:13px 15px;color:#72551b;font-size:12px;line-height:1.5;margin:16px 0}.success{display:none;background:#eaf5ee;border:1px solid #c6e5d1;color:#1e6944;padding:12px;border-radius:9px;margin-top:14px;font-size:13px}.empty-state{padding:34px;text-align:center;color:var(--muted)}footer{background:#071d38;color:#d4deea;padding:24px 22px;font-size:12px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer-inner strong{color:#e4c77e}
+@media(max-width:800px){.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.events{grid-template-columns:1fr}.lower{grid-template-columns:1fr}.brand-name{font-size:14px}.wrap{padding:20px 14px 40px}.hero{padding:22px}.section-head{align-items:start;flex-direction:column}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand"><div class="seal">ODLF</div><div><div class="brand-name">ORATORY &amp; DEBATE</div><div class="brand-sub">LEAGUE OF FLORIDA</div></div></div>
+    <nav aria-label="Main navigation">
+      <button class="active" data-page="home">Home</button><button data-page="tournaments">Tournaments</button><button data-page="register">Register</button><button data-page="results">Results</button><button data-page="about">About ODLF</button><button data-page="login">Login / Portal</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section id="home" class="page active">
+    <div class="hero">
+      <div><div class="eyebrow">Speak with Purpose. Debate with Reason.</div><h1>Ideas deserve a stage.</h1><p>Welcome to the Oratory &amp; Debate League of Florida — a home for student voices, thoughtful argument, and respectful competition.</p><div class="hero-actions"><button class="btn" onclick="showPage('tournaments')">Explore tournaments</button><button class="btn outline" onclick="showPage('register')">Register interest</button></div></div>
+      <div class="hero-note"><h3>Competition starts here</h3><p><strong>01</strong> &nbsp; Find an upcoming tournament</p><p><strong>02</strong> &nbsp; Register your school or team</p><p><strong>03</strong> &nbsp; Prepare, compete, and grow</p><p><strong>04</strong> &nbsp; Follow results and standings</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-label">Upcoming events</div><div class="stat-value">03</div><div class="stat-foot">Sample schedule</div></div>
+      <div class="stat"><div class="stat-label">Competition areas</div><div class="stat-value">02</div><div class="stat-foot">Speech + debate</div></div>
+      <div class="stat"><div class="stat-label">Student divisions</div><div class="stat-value">02</div><div class="stat-foot">Middle + high school</div></div>
+      <div class="stat"><div class="stat-label">Season</div><div class="stat-value">2026–27</div><div class="stat-foot">Illustrative season</div></div>
+    </div>
+    <div class="section-head"><div><h2>Featured tournaments</h2><p>Find your next opportunity to compete.</p></div><button class="link" onclick="showPage('tournaments')">View all tournaments →</button></div>
+    <div class="events" id="featured-events"></div>
+    <div class="lower">
+      <div class="panel"><h3>League announcements</h3><div class="row-item"><div class="datebox"><b>01</b><span>Update</span></div><div><strong>Welcome to the ODLF website</strong><small>Our sample portal is ready for your league details and official announcements.</small></div></div><div class="row-item"><div class="datebox"><b>02</b><span>Plan</span></div><div><strong>Volunteer judges and coaches</strong><small>Build a strong, fair competition community.</small></div></div></div>
+      <div class="panel"><h3>Competition values</h3><div class="row-item"><div class="datebox">✦</div><div><strong>Respectful discourse</strong><small>Challenge arguments, respect people.</small></div></div><div class="row-item"><div class="datebox">✦</div><div><strong>Fair competition</strong><small>Clear rules, consistent judging, and integrity.</small></div></div><div class="row-item"><div class="datebox">✦</div><div><strong>Student growth</strong><small>Confidence, research, reasoning, and voice.</small></div></div></div>
+    </div>
+  </section>
+  <section id="tournaments" class="page">
+    <h1 class="page-title">Tournaments</h1><p class="intro">Browse the sample ODLF calendar. Replace these placeholder events with confirmed dates, venues, and entry deadlines before publishing.</p>
+    <div class="toolbar"><input class="field" id="event-search" placeholder="Search tournaments…" aria-label="Search tournaments"><select id="division-filter" aria-label="Filter by division"><option value="all">All divisions</option><option>Middle School</option><option>High School</option><option>All Schools</option></select></div>
+    <div class="events" id="all-events"></div>
+  </section>
+  <section id="register" class="page">
+    <h1 class="page-title">Registration &amp; interest</h1><p class="intro">Use this demo form to collect interest from schools, coaches, students, or volunteer judges.</p>
+    <div class="panel">
+      <form id="registration-form"><div class="form-grid">
+        <div class="form-group"><label for="person-name">Your name *</label><input class="field" id="person-name" required placeholder="Full name"></div>
+        <div class="form-group"><label for="email">Email *</label><input class="field" id="email" type="email" required placeholder="you@school.org"></div>
+        <div class="form-group"><label for="school">School / organization</label><input class="field" id="school" placeholder="School or organization"></div>
+        <div class="form-group"><label for="role">I am a… *</label><select id="role" class="field" required><option value="">Choose a role</option><option>Coach / teacher</option><option>Student</option><option>Judge / volunteer</option><option>Parent / guardian</option><option>School administrator</option></select></div>
+        <div class="form-group"><label for="division">Division</label><select id="division" class="field"><option>High School</option><option>Middle School</option><option>Both / not applicable</option></select></div>
+        <div class="form-group"><label for="interest">Primary interest</label><select id="interest" class="field"><option>Both speech and debate</option><option>Speech events</option><option>Debate events</option><option>Judging / volunteering</option><option>Hosting a tournament</option></select></div>
+        <div class="form-group full"><label for="notes">Questions or notes</label><textarea id="notes" class="field" rows="4" placeholder="Tell us what you are interested in…"></textarea></div>
+      </div><div class="notice">Demo only: this form does not send or save data to a server. Connect it to a secure backend or form service before using it for real registrations. Collect student information only with appropriate school/guardian consent.</div><button class="btn" type="submit">Submit interest</button><div class="success" id="form-success" role="status">Thanks! The demo form validated successfully, but nothing was sent or saved.</div></form>
+    </div>
+  </section>
+
+  <section id="login" class="page">
+    <h1 class="page-title">ODLF Member Portal</h1>
+    <p class="intro">Sign in to your league account. Administrators can add users and assign teacher or student roles.</p>
+    <div class="notice"><strong>Prototype notice:</strong> This version is for preview only. Accounts and passwords are stored in this browser and are not secure. Do not use real passwords or sensitive student information. A live launch needs a secure authentication service and server-side role permissions.</div>
+    <div class="lower">
+      <div class="panel" id="login-panel">
+        <h3>Sign in</h3>
+        <form id="login-form"><div class="form-grid">
+          <div class="form-group full"><label for="login-email">Email</label><input class="field" id="login-email" type="email" required placeholder="you@school.org" autocomplete="username"></div>
+          <div class="form-group full"><label for="login-password">Password</label><input class="field" id="login-password" type="password" required placeholder="Enter password" autocomplete="current-password"></div>
+        </div><p id="login-error" style="color:#a22;font-size:13px;display:none" role="alert"></p><button class="btn" type="submit">Sign in</button></form>
+        <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.7"><strong>Demo accounts</strong><br>Admin: admin@odlf.org / AdminDemo123!<br>Teacher: teacher@odlf.org / TeacherDemo123!<br>Student: student@odlf.org / StudentDemo123!</div>
+      </div>
+      <div class="panel" id="portal-panel" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:start;gap:12px;flex-wrap:wrap"><div><h3 id="portal-heading">Welcome</h3><p id="portal-description" style="color:var(--muted);font-size:13px"></p></div><button class="btn secondary" id="logout-button" type="button">Sign out</button></div>
+        <div id="admin-tools" style="display:none;margin-top:18px">
+          <h3 style="font-size:17px">Add a person</h3>
+          <form id="add-user-form"><div class="form-grid">
+            <div class="form-group"><label for="new-name">Full name</label><input class="field" id="new-name" required maxlength="100" placeholder="Full name"></div>
+            <div class="form-group"><label for="new-email">Email</label><input class="field" id="new-email" required type="email" maxlength="160" placeholder="person@school.org"></div>
+            <div class="form-group"><label for="new-role">Role</label><select class="field" id="new-role"><option value="teacher">Teacher</option><option value="student">Student</option><option value="admin">Administrator</option></select></div>
+            <div class="form-group"><label for="new-password">Temporary demo password</label><input class="field" id="new-password" required type="password" minlength="8" maxlength="100" placeholder="At least 8 characters"></div>
+          </div><p style="font-size:12px;color:var(--muted)">For this prototype, set a temporary password yourself and share it securely. A real system should send an invitation/reset link instead.</p><button class="btn" type="submit">Add person</button><p id="user-message" role="status" style="font-size:13px"></p></form>
+          <h3 style="font-size:17px;margin-top:26px">People in this browser</h3><div class="table-wrap"><table style="min-width:500px"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Action</th></tr></thead><tbody id="users-body"></tbody></table></div>
+        </div>
+        <div id="role-dashboard" class="notice" style="margin-top:18px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" class="page">
+    <h1 class="page-title">Results &amp; standings</h1><p class="intro">A sample results board for illustrating how tournament placements could appear.</p>
+    <div class="notice">These are fictional example results, not official standings.</div>
+    <div class="toolbar"><select id="result-event" class="field" aria-label="Choose event" style="max-width:330px"><option>Sunshine Invitational</option><option>Central Florida Classic</option><option>ODLF Season Opener</option></select><input class="field" id="result-search" placeholder="Search school or competitor…" style="max-width:340px"></div>
+    <div class="table-wrap"><table><thead><tr><th>Place</th><th>Competitor / team</th><th>School</th><th>Event</th><th>Points</th></tr></thead><tbody id="results-body"></tbody></table></div>
+  </section>
+  <section id="about" class="page">
+    <h1 class="page-title">About ODLF</h1><p class="intro">The Oratory &amp; Debate League of Florida is envisioned as a student-centered community for public speaking, critical thinking, and competitive debate.</p>
+    <div class="lower">
+      <div class="panel"><h3>Our mission</h3><p style="line-height:1.75;color:#526073">To help students become confident communicators and careful thinkers through accessible, fair, and respectful speech and debate competition.</p><h3 style="margin-top:24px">Our motto</h3><p style="font-family:Georgia,serif;font-style:italic;font-size:20px;color:var(--navy)">“Speak with Purpose. Debate with Reason.”</p></div>
+      <div class="panel"><h3>Competition formats</h3><div class="row-item"><div class="datebox">S</div><div><strong>Speech</strong><small>Prepared speaking, interpretive events, and other formats selected by the league.</small></div></div><div class="row-item"><div class="datebox">D</div><div><strong>Debate</strong><small>Structured argument, evidence, rebuttal, and cross-examination formats.</small></div></div><div class="row-item"><div class="datebox">J</div><div><strong>Judging</strong><small>Clear ballots, judge training, and transparent tournament procedures.</small></div></div></div>
+    </div>
+    <div class="notice"><strong>Before launch:</strong> confirm the league name is available, publish official rules and eligibility requirements, recruit tournament staff, and set up secure accounts and data handling.</div>
+  </section>
+</main>
+<footer><div class="footer-inner"><div><strong>ODLF</strong> · Oratory &amp; Debate League of Florida</div><div>Speak with Purpose. Debate with Reason.</div><div>Demo website · Not an official registration system yet</div></div></footer>
+<script>
+const events=[
+ {name:"ODLF Season Opener",date:"Nov 14, 2026",place:"Tampa, Florida · Venue to be confirmed",division:"All Schools",status:"Planning",kind:"blue",desc:"Kick off the season with speech and debate events."},
+ {name:"Sunshine Invitational",date:"Dec 05, 2026",place:"Central Florida · Venue to be confirmed",division:"High School",status:"Coming soon",kind:"",desc:"A full day of individual speech and debate competition."},
+ {name:"Central Florida Classic",date:"Jan 23, 2027",place:"Central Florida · Venue to be confirmed",division:"Middle School",status:"Coming soon",kind:"blue",desc:"A welcoming tournament for developing speakers and debaters."}
+];
+function eventCard(e){return `<article class="event-card"><div class="event-top"><span class="pill ${e.kind}">${e.status}</span><span style="font-size:11px;color:#697586">${e.division}</span></div><h3>${e.name}</h3><div class="event-meta">📅 ${e.date}<br>📍 ${e.place}</div><p style="font-size:13px;line-height:1.55;color:#526073;margin:0">${e.desc}</p><button class="btn" onclick="showPage('register')">Register interest</button></article>`}
+document.getElementById('featured-events').innerHTML=events.map(eventCard).join('');
+function renderEvents(){const q=(document.getElementById('event-search')?.value||'').toLowerCase();const d=document.getElementById('division-filter')?.value||'all';const list=events.filter(e=>(e.name+' '+e.place+' '+e.division).toLowerCase().includes(q)&&(d==='all'||e.division===d||e.division==='All Schools'));document.getElementById('all-events').innerHTML=list.length?list.map(eventCard).join(''):'<div class="panel empty-state">No tournaments match those filters.</div>'}
+document.getElementById('event-search').addEventListener('input',renderEvents);document.getElementById('division-filter').addEventListener('change',renderEvents);
+const results=[
+ {place:1,name:"Alex Morgan",school:"Example High School",event:"Original Oratory",points:29.5},
+ {place:2,name:"Jordan Lee",school:"Sample Preparatory",event:"Original Oratory",points:28.8},
+ {place:3,name:"Taylor Rivera",school:"Example High School",event:"Original Oratory",points:28.1},
+ {place:1,name:"Team North",school:"Sample Preparatory",event:"Public Forum Debate",points:3},
+ {place:2,name:"Team Central",school:"Example High School",event:"Public Forum Debate",points:2},
+ {place:3,name:"Team South",school:"Demo Academy",event:"Public Forum Debate",points:1}
+];
+function renderResults(){const q=(document.getElementById('result-search').value||'').toLowerCase();const event=document.getElementById('result-event').value;const chosen=results.filter(r=>((r.name+' '+r.school+' '+r.event).toLowerCase().includes(q))&&(event!=='Sunshine Invitational'||true));document.getElementById('results-body').innerHTML=chosen.map(r=>`<tr><td><strong>${r.place}</strong></td><td>${r.name}</td><td>${r.school}</td><td>${r.event}</td><td>${r.points}</td></tr>`).join('')||'<tr><td colspan="5" class="empty-state">No results found.</td></tr>'}
+document.getElementById('result-search').addEventListener('input',renderResults);document.getElementById('result-event').addEventListener('change',renderResults);
+
+const DEMO_USERS_KEY='odlf_demo_users_v1';
+const DEMO_SESSION_KEY='odlf_demo_session_v1';
+const defaultDemoUsers=[
+ {name:'ODLF Administrator',email:'admin@odlf.org',role:'admin',password:'AdminDemo123!'},
+ {name:'Sample Teacher',email:'teacher@odlf.org',role:'teacher',password:'TeacherDemo123!'},
+ {name:'Sample Student',email:'student@odlf.org',role:'student',password:'StudentDemo123!'}
+];
+function getDemoUsers(){try{const stored=localStorage.getItem(DEMO_USERS_KEY);if(stored)return JSON.parse(stored)}catch(e){}return defaultDemoUsers.slice()}
+function saveDemoUsers(users){localStorage.setItem(DEMO_USERS_KEY,JSON.stringify(users))}
+function esc(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+let currentDemoUser=null;
+function showLogin(){document.getElementById('login-panel').style.display=currentDemoUser?'none':'block';document.getElementById('portal-panel').style.display=currentDemoUser?'block':'none';if(!currentDemoUser)return;
+ document.getElementById('portal-heading').textContent='Welcome, '+currentDemoUser.name;
+ const roleNames={admin:'Administrator',teacher:'Teacher',student:'Student'};
+ document.getElementById('portal-description').textContent=currentDemoUser.email+' · '+roleNames[currentDemoUser.role];
+ document.getElementById('admin-tools').style.display=currentDemoUser.role==='admin'?'block':'none';
+ const dashboard=document.getElementById('role-dashboard');
+ dashboard.textContent=currentDemoUser.role==='admin'?'Administrator access: add people and assign their account roles.':currentDemoUser.role==='teacher'?'Teacher dashboard: your league account is ready. Future features can include team rosters, tournament entries, and student progress.':'Student dashboard: your league account is ready. Future features can include tournament registrations, schedules, and results.';
+ if(currentDemoUser.role==='admin')renderDemoUsers();
+}
+function renderDemoUsers(){const users=getDemoUsers();document.getElementById('users-body').innerHTML=users.map((u,i)=>`<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td>${esc(u.role)}</td><td>${u.email.toLowerCase()==='admin@odlf.org'?'Protected':`<button class="link" type="button" onclick="removeDemoUser(${i})">Remove</button>`}</td></tr>`).join('')}
+function removeDemoUser(index){if(!currentDemoUser||currentDemoUser.role!=='admin')return;const users=getDemoUsers();if(!users[index]||users[index].email.toLowerCase()==='admin@odlf.org')return;users.splice(index,1);saveDemoUsers(users);renderDemoUsers()}
+document.getElementById('login-form').addEventListener('submit',e=>{e.preventDefault();const email=document.getElementById('login-email').value.trim().toLowerCase();const password=document.getElementById('login-password').value;const user=getDemoUsers().find(u=>u.email.toLowerCase()===email&&u.password===password);const error=document.getElementById('login-error');if(!user){error.textContent='That email and password did not match a demo account.';error.style.display='block';return}error.style.display='none';currentDemoUser={name:user.name,email:user.email,role:user.role};showLogin()});
+document.getElementById('logout-button').addEventListener('click',()=>{currentDemoUser=null;document.getElementById('login-form').reset();showLogin()});
+document.getElementById('add-user-form').addEventListener('submit',e=>{e.preventDefault();if(!currentDemoUser||currentDemoUser.role!=='admin')return;const users=getDemoUsers();const name=document.getElementById('new-name').value.trim();const email=document.getElementById('new-email').value.trim();const role=document.getElementById('new-role').value;const password=document.getElementById('new-password').value;const msg=document.getElementById('user-message');if(users.some(u=>u.email.toLowerCase()===email.toLowerCase())){msg.textContent='An account with that email already exists.';msg.style.color='#a22';return}users.push({name,email,role,password});try{saveDemoUsers(users);msg.textContent='Person added to this browser’s demo account list.';msg.style.color='#24734d';e.target.reset();renderDemoUsers()}catch(err){msg.textContent='Could not save in this browser. Check browser storage settings.';msg.style.color='#a22'}});
+
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='tournaments')renderEvents();if(id==='login')showLogin();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('registration-form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('form-success').style.display='block';});
+renderEvents();renderResults();
+</script>
+</body>
+</html>
